@@ -1,14 +1,17 @@
 .notes-cont{
-    height: 600px;
-    display: flex;
+    display: block;
+    height: 800px;
     background-color: lightblue;
     margin-top: 20px;
     padding: 20px;
 }
+.row{
+    display: flex;
+}
 .note{
-    height: 80px;
-    width: 80px;
+    height: 160px;
+    width: 160px;
     background-color: lightcoral;
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
 }
