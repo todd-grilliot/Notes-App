@@ -9,9 +9,44 @@
     display: flex;
 }
 .note{
-    height: 160px;
-    width: 160px;
-    background-color: lightcoral;
+    height: 300px;
+    width: 240px;
+    background-color: orange;
     margin: 20px;
+    /*padding: 20px;*/
+}
+.inner-note{
+    background-color: lightcoral;
     padding: 20px;
+    height: calc(100% - 60px);
+}
+.note-textarea{
+    width: auto;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.top-bar{
+    display: flex;
+    background-color: darkslateblue;
+    width: 95%;
+    padding-right: 5%;
+    justify-content: end;
+}
+.top-bar button{
+    background-color: transparent;
+    border: none;
+}
+.top-bar i{
+    font-size: 20px;
+    margin: 5px 0;
+    color: whitesmoke;
+}
+.trash{
+    margin-right: 10px;
 }
