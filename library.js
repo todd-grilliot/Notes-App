@@ -1,6 +1,5 @@
 var noteArray = [];
 var rowLimitX = Math.floor((window.innerWidth -50) / 280);
-//console.log(screen.width / 400)
 
 function debugKey(){
     $(document).keydown(function (e) {
