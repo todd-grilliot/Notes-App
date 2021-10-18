@@ -5,11 +5,12 @@ newRow();
 
 debugKey();
 
-//title, text, delete button
-// edit button? or do you just click them?
-//dragable to change their position.
-//responsive so their grid moves with screen size. < window.onresize! we can check and reformat with them.
+setTimeout(function() {console.log(firebase)},5000)
+console.log(firebase);
+//window.onresize() probably gonna have somekind of refresh/load function that will fire when you resize the screen, to make things fit again.
+// how to change position??? there might be an easy jquery way to do dragging, you could also just put left and right buttons on stuff.
+//what's the edit button for? the textarea is better.
+//color select button might be nice.
+//library read() function myight be helpful, so you don't have to write the function to look at all the notes each time.
 
-//then we can try to push to and pull from a database
-
-//send what's written to the note object and then get it to display text until you press the edit button. 
+//login/register buttons for users. db. yeah yeah
