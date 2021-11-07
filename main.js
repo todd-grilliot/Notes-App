@@ -1,12 +1,17 @@
 
 
-console.log('starting the app...');
+console.log(' manin .js tbg is starting the app...');
 newRow();
 
 debugKey();
 
-setTimeout(function() {console.log(firebase)},5000)
-console.log(firebase);
+//setTimeout(function() {console.log(firebase)},5000)
+//console.log(firebase);
+
+
+
+
+
 //window.onresize() probably gonna have somekind of refresh/load function that will fire when you resize the screen, to make things fit again.
 // how to change position??? there might be an easy jquery way to do dragging, you could also just put left and right buttons on stuff.
 //what's the edit button for? the textarea is better.
