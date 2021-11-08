@@ -13,6 +13,7 @@
         <script src="note-class.js" defer></script>
         <script src="main.js" defer></script>
         <script type="module" src="auth.js" defer></script>
+        <script type="module" src="db.js" defer></script>
     </head>
     <body>
         <h1>This is a notes app?</h1>
@@ -30,6 +31,30 @@
                     <button class="button">Sign Up</button>
                   </form>
             </div>
+
+            <div class="form-container-test">
+                <form id="login-form">
+                    <label for="login-email">Log In Email:</label><br>
+                    <input type="email" id="login-email" name="login-email"><br>
+                    <label for="login-password">Log In Password:</label><br>
+                    <input type="text" id="login-password" name="login-password">
+                    <!--<input type="submit" value="Sign Up">-->
+                    <button class="button">Log In</button>
+                  </form>
+            </div>
+
+            <div class="form-container-test">
+                <form id="test-form">
+                    <label for="login-email">Favorite Pokemon</label><br>
+                    <input type="text" id="fav-pokemon" name="fav-pokemon"><br>
+                    <label for="pokemon-type">Pokemon Type:</label><br>
+                    <input type="text" id="pokemon-type" name="pokemon-type">
+                    <!--<input type="submit" value="Sign Up">-->
+                    <button class="button">submit</button>
+                  </form>
+            </div>
+
+            <button id="logout-button" class="button">Logout</button>
         </div>
         
         <div class="notes-cont">

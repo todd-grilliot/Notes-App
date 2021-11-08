@@ -5,11 +5,6 @@ newRow();
 
 debugKey();
 
-//setTimeout(function() {console.log(firebase)},5000)
-//console.log(firebase);
-
-
-
 
 
 //window.onresize() probably gonna have somekind of refresh/load function that will fire when you resize the screen, to make things fit again.
