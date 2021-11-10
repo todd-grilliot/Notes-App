@@ -1,12 +1,16 @@
 import {app, db, auth} from '/firebase.js'
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
 
+var currentUID;
+
 //auth listener
 onAuthStateChanged(auth, (user) => {
     console.log('AUTH STATTE SCHANGE!');
     if(user){
         console.log('user is logged in');
         console.log(user);
+        console.log(user.uid);
+        currentUID = user.uid;
     } else{
         console.log('user is signed out');
     }
@@ -58,3 +62,4 @@ logout.click(function(e) {
 // then when we look through the db, we can pull just the data with his uid. :O!
 //let's make  a test form where he can enter data and then we'll try to pull it depending on his uid.
 
+export var currentUID;
