@@ -9,25 +9,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-        <script src="library.js" defer></script>
-        <script src="note-class.js" defer></script>
-        <script src="main.js" defer></script>
+        <script type="module" src="library.js" defer></script>
+        <script type="module" src="note-class.js" defer></script>
+        <script type="module" src="main.js" defer></script>
         <script type="module" src="auth.js" defer></script>
         <script type="module" src="db.js" defer></script>
     </head>
     <body>
         <h1>This is a notes app?</h1>
         <div class="nav">
-            <button id="new-note-button" class="button" onclick="newNote()">new note pls</button>
-            <button id="save-button" class="button" onclick="saveAll()">Save Button</button>
+            <button id="new-note-button" class="button">new note pls</button>
+            <button id="save-button" class="button">Save Button</button>
+            <button id="load-button" class="button">Load Button</button>
             
             <div class="form-container-test">
                 <form id="signup-form">
                     <label for="signup-email">Sign Up Email:</label><br>
                     <input type="email" id="signup-email" name="signup-email"><br>
                     <label for="signup-password">Sign Up Password:</label><br>
-                    <input type="text" id="signup-password" name="signup-password">
-                    <!--<input type="submit" value="Sign Up">-->
+                    <input type="text" id="signup-password" name="signup-password"><br>
                     <button class="button">Sign Up</button>
                   </form>
             </div>
@@ -37,8 +37,7 @@
                     <label for="login-email">Log In Email:</label><br>
                     <input type="email" id="login-email" name="login-email"><br>
                     <label for="login-password">Log In Password:</label><br>
-                    <input type="text" id="login-password" name="login-password">
-                    <!--<input type="submit" value="Sign Up">-->
+                    <input type="text" id="login-password" name="login-password"><br>
                     <button class="button">Log In</button>
                   </form>
             </div>
@@ -48,8 +47,9 @@
                     <label for="login-email">Favorite Pokemon</label><br>
                     <input type="text" id="fav-pokemon" name="fav-pokemon"><br>
                     <label for="pokemon-type">Pokemon Type:</label><br>
-                    <input type="text" id="pokemon-type" name="pokemon-type">
-                    <!--<input type="submit" value="Sign Up">-->
+                    <input type="text" id="pokemon-type" name="pokemon-type"><br>
+                    <label for="pokemon-size">Pokemon Size:</label><br>
+                    <input type="text" id="pokemon-size" name="pokemon-size"><br>
                     <button class="button">submit</button>
                   </form>
             </div>

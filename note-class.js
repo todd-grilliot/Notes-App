@@ -1,4 +1,6 @@
-class Note {
+import { noteArray } from './library.js';
+
+export class Note {
     constructor(text){
         this.text = text;
         this.id = noteArray.length;
@@ -6,5 +8,5 @@ class Note {
 
         noteArray.push(this);
     }
-
 }
+

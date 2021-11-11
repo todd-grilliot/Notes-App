@@ -19,4 +19,3 @@
 export var app = initializeApp(firebaseConfig);
 export var db = getFirestore(app);
 export var auth = getAuth();
-

@@ -1,5 +1,9 @@
+
 .nav{
     display: flex;
+}
+.form-container-test{
+    margin: 10px;
 }
 .notes-cont{
     display: block;
