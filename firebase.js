@@ -1,3 +1,5 @@
+  //start page
+  
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
@@ -16,6 +18,6 @@
   };
 
 // Initialize Firebase
-export var app = initializeApp(firebaseConfig);
-export var db = getFirestore(app);
-export var auth = getAuth();
+export let app = initializeApp(firebaseConfig);
+export let db = getFirestore(app);
+export let auth = getAuth();

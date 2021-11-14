@@ -1,19 +1,22 @@
+//start page
+
+import { loadFromDb } from "./db.js";
 import {app, db, auth} from '/firebase.js'
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
 
-var userUID;
-var userEmail;
+export let userUID;
+export let userEmail;
 
 //auth listener
 onAuthStateChanged(auth, (user) => {
     console.log('AUTH STATTE SCHANGE!');
     if(user){
         console.log('user is logged in');
-        console.log(user);
         console.log(user.uid);
         console.log(user.email);
         userEmail = user.email;
         userUID = user.uid;
+        loadFromDb();
     } else{
         console.log('user is signed out');
     }
@@ -26,8 +29,8 @@ const signupForm = $('#signup-form');
 signupForm.submit(function(e) {
     e.preventDefault();
 
-    var email = signupForm[0][0].value;
-    var password = signupForm[0][1].value;
+    let email = signupForm[0][0].value;
+    let password = signupForm[0][1].value;
     console.log(`you entered: ${email}, ${password}`);
     
     createUserWithEmailAndPassword(auth, email, password).then(cred => {
@@ -41,8 +44,8 @@ const loginForm = $('#login-form');
 loginForm.submit(function(e) {
     e.preventDefault();
 
-    var email = loginForm[0][0].value;
-    var password = loginForm[0][1].value;
+    let email = loginForm[0][0].value;
+    let password = loginForm[0][1].value;
     console.log(`you entered: ${email}, ${password}`);
 
     signInWithEmailAndPassword(auth, email, password).then(cred => {
@@ -64,6 +67,3 @@ logout.click(function(e) {
 // so when he saves a document, it will grab his uid to identify him.
 // then when we look through the db, we can pull just the data with his uid. :O!
 //let's make  a test form where he can enter data and then we'll try to pull it depending on his uid.
-
-export var userUID;
-export var userEmail;

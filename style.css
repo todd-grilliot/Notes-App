@@ -1,33 +1,53 @@
-
-.nav{
+.nav {
     display: flex;
 }
-.form-container-test{
+.form-container-test {
     margin: 10px;
 }
-.notes-cont{
+.notes-cont {
     display: block;
     height: 2000px;
     background-color: lightblue;
     margin-top: 20px;
     padding: 20px;
 }
-.row{
+.row {
     display: flex;
 }
-.note{
+.new-note-float{
+    height: 272px;
+    width: 200px;
+    /*background-color: white;*/
+    margin: 20px;
+    border: 20px;
+    border-radius: 20px;
+    border-color: lightslategray;
+    border-style: dashed;
+    display: flex;
+}
+.new-note-float button{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+}
+.new-note-float i{
+    font-size: 120px;
+    margin: auto;
+    color: lightslategray;;
+}
+.note {
     height: 300px;
     width: 240px;
     background-color: orange;
     margin: 20px;
     /*padding: 20px;*/
 }
-.inner-note{
+.inner-note {
     background-color: lightcoral;
     padding: 20px;
     height: calc(100% - 60px);
 }
-.note-textarea{
+.note-textarea {
     width: auto;
     background-color: transparent;
     color: white;
@@ -38,22 +58,22 @@
     border: none;
 }
 
-.top-bar{
+.top-bar {
     display: flex;
     background-color: darkslateblue;
     width: 95%;
     padding-right: 5%;
     justify-content: end;
 }
-.top-bar button{
+.top-bar button {
     background-color: transparent;
     border: none;
 }
-.top-bar i{
+.top-bar i {
     font-size: 20px;
     margin: 5px 0;
     color: whitesmoke;
 }
-.trash{
+.trash {
     margin-right: 10px;
 }
