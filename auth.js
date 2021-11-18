@@ -1,5 +1,6 @@
 //start page
 
+import { loggedOut, loggedIn, exitModal } from "./library.js";
 import { loadFromDb } from "./db.js";
 import {app, db, auth} from '/firebase.js'
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
@@ -11,14 +12,12 @@ export let userEmail;
 onAuthStateChanged(auth, (user) => {
     console.log('AUTH STATTE SCHANGE!');
     if(user){
-        console.log('user is logged in');
-        console.log(user.uid);
-        console.log(user.email);
+        loggedIn(user);
         userEmail = user.email;
         userUID = user.uid;
         loadFromDb();
     } else{
-        console.log('user is signed out');
+        loggedOut();
     }
     
 })
@@ -36,6 +35,7 @@ signupForm.submit(function(e) {
     createUserWithEmailAndPassword(auth, email, password).then(cred => {
         console.log(cred);
         signupForm.trigger("reset");
+        exitModal();
     });
 });
 
@@ -51,18 +51,21 @@ loginForm.submit(function(e) {
     signInWithEmailAndPassword(auth, email, password).then(cred => {
         console.log(cred);
         loginForm.trigger("reset");
+        exitModal();
     });
 });
 
 //logout
-const logout = $('#logout-button');
-logout.click(function(e) {
-    e.preventDefault();
+// const logout = $('#logout-button');
+// logout.click(function(e) {
+//     e.preventDefault();
     
+
+// })
+export function logout(){
     signOut(auth).then(() => {
     }).catch((error) => console.error(error));
-})
-
+}
 
 // so when he saves a document, it will grab his uid to identify him.
 // then when we look through the db, we can pull just the data with his uid. :O!

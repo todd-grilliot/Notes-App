@@ -1,13 +1,56 @@
+body{
+    margin: 0;
+}
 .nav {
     display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 50px 100px;
 }
-.form-container-test {
-    margin: 10px;
+.nav-button{
+    padding: 25px;
+    cursor: pointer; 
 }
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+}
+.modal-content{
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 35px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+.close-x{
+    font-size: 40px;
+    font-weight: 1000;
+    cursor: pointer;
+    float: right;
+    color: grey;
+}
+.close-x:hover, .close-x:focus{
+    color: darkslategray;
+}
+
 .notes-cont {
-    display: block;
+
+    display: none;
     height: 2000px;
     background-color: lightblue;
+    padding: 25px;
+}
+.logged-out-cont {
+    height: 2000px;
+    background-color: lightgray;
     margin-top: 20px;
     padding: 20px;
 }
@@ -20,7 +63,7 @@
     /*background-color: white;*/
     margin: 20px;
     border: 20px;
-    border-radius: 20px;
+    /*border-radius: 20px;*/
     border-color: lightslategray;
     border-style: dashed;
     display: flex;
@@ -74,6 +117,7 @@
     margin: 5px 0;
     color: whitesmoke;
 }
-.trash {
-    margin-right: 10px;
+.trash-button{
+    cursor: pointer;
 }
+

@@ -20,7 +20,7 @@ export class Note {
     }
 
     build(text, id) {
-        console.log('calling the build function for ' + this.id);
+        //console.log('calling the build function for ' + this.id);
 
         if (!text) {text = "";}
 

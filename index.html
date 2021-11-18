@@ -17,13 +17,33 @@
         <script type="module" src="db.js" defer></script>
     </head>
     <body>
-        <h1>This is a notes app?</h1>
         <div class="nav">
-            <button id="new-note-button" class="button">new note pls</button>
             <button id="save-button" class="button">Save Button</button>
-            <!-- <button id="load-button" class="button">Load Button</button> -->
 
-            <div class="form-container-test">
+            <!-- <button id="logout-button" class="button">Logout</button> -->
+
+            <div class="nav-button" id="sign-up">
+                <h2>SIGN UP</h2>
+            </div>
+
+            <div class="nav-button" id="log-in">
+                <h2>LOG IN</h2>
+            </div>
+
+            <div class="nav-button" id="log-out">
+                <h2>LOG OUT</h2>
+            </div>
+
+            <div class="nav-button" id="user-info">
+                <h2>USER INFO</h2>
+            </div>
+        </div>
+
+        <!-- MODALS -->
+        <div class="modal" id="sign-up-modal">
+            <div class="modal-content">
+                <span class="close-x">&times;</span>
+                <p>this is a modal for signing up and it works so so well</p>
                 <form id="signup-form">
                     <label for="signup-email">Sign Up Email:</label><br />
                     <input
@@ -40,8 +60,12 @@
                     <button class="button">Sign Up</button>
                 </form>
             </div>
+        </div>
 
-            <div class="form-container-test">
+        <div class="modal" id="log-in-modal">
+            <div class="modal-content">
+                <span class="close-x">&times;</span>
+                <p>this is a modal for loggin in and it works so so well</p>
                 <form id="login-form">
                     <label for="login-email">Log In Email:</label><br />
                     <input
@@ -58,34 +82,18 @@
                     <button class="button">Log In</button>
                 </form>
             </div>
-
-            <div class="form-container-test">
-                <form id="test-form">
-                    <label for="login-email">Favorite Pokemon</label><br />
-                    <input
-                        type="text"
-                        id="fav-pokemon"
-                        name="fav-pokemon"
-                    /><br />
-                    <label for="pokemon-type">Pokemon Type:</label><br />
-                    <input
-                        type="text"
-                        id="pokemon-type"
-                        name="pokemon-type"
-                    /><br />
-                    <label for="pokemon-size">Pokemon Size:</label><br />
-                    <input
-                        type="text"
-                        id="pokemon-size"
-                        name="pokemon-size"
-                    /><br />
-                    <button class="button">submit</button>
-                </form>
+        </div>
+        <div class="modal" id="user-info-modal">
+            <div class="modal-content">
+                <span class="close-x">&times;</span>
+                <p>this is a modal for user info and it works so so well</p>
             </div>
-
-            <button id="logout-button" class="button">Logout</button>
         </div>
 
+        <!-- MAIN BODY CONTENT -->
+        <div class="logged-out-cont">
+            logged out text for logged out container
+        </div>
         <div class="notes-cont"></div>
     </body>
 </html>

@@ -1,11 +1,13 @@
 //start page
 
-import { newRow, debugKey, newNote, saveAll } from "./library.js";
+import { newRow, debugKey, newNote, saveAll, onPageLoad, launchModal } from "./library.js";
 import { loadFromDb } from "./db.js";
+import { logout } from "./auth.js";
 
 console.log(" manin .js tbg is starting the app...");
 
 newRow();
+onPageLoad();
 
 //EVENT LISTENERS
 debugKey();
@@ -25,14 +27,22 @@ $("#load-button").click(function (e) {
     loadFromDb();
 });
 
+//MODAL EVENT LISTENERS
+$("#sign-up").click(function (e) {
+    launchModal("#sign-up-modal");
+})
 
-/*
-    //didn't work
-    $('#trash-button-1').click(function (e) {
-        e.preventDefault();
-        console.log('trash me plsss');
-    })
-*/
+$("#log-in").click(function (e) {
+    console.log('log in!');
+    launchModal("#log-in-modal");
+})
 
-//next thing to do is to go into the load funtion and give it power to pull from the db and copy the data onto the local array,
-// then build all the notes on the array using your new powers.
+$("#log-out").click(function (e) {
+    console.log('log out!');
+    logout();
+})
+
+$("#user-info").click(function (e) {
+    console.log('user info!');
+    launchModal("#user-info-modal");
+})
