@@ -15,6 +15,12 @@
         <script type="module" src="main.js" defer></script>
         <script type="module" src="auth.js" defer></script>
         <script type="module" src="db.js" defer></script>
+        <script type="module" src="array-library.js" defer></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Roboto:wght@100;300;500;700;900&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="nav">
@@ -43,21 +49,31 @@
         <div class="modal" id="sign-up-modal">
             <div class="modal-content">
                 <span class="close-x">&times;</span>
-                <p>this is a modal for signing up and it works so so well</p>
+                <h3 class="modal-title">SIGN UP</h3>
                 <form id="signup-form">
-                    <label for="signup-email">Sign Up Email:</label><br />
-                    <input
-                        type="email"
-                        id="signup-email"
-                        name="signup-email"
-                    /><br />
-                    <label for="signup-password">Sign Up Password:</label><br />
-                    <input
-                        type="text"
-                        id="signup-password"
-                        name="signup-password"
-                    /><br />
-                    <button class="button">Sign Up</button>
+                    <div class="modal-label-input">
+                        <label for="signup-email" class="modal-label">Email:</label>
+                        <br />
+                        <input
+                            type="email"
+                            id="signup-email"
+                            name="signup-email"
+                            class="modal-input"
+                        />
+                    </div>
+                    <div class="modal-label-input">
+                        <label for="signup-password" class="modal-label"
+                            >Password:</label
+                        ><br />
+                        <input
+                            type="text"
+                            id="signup-password"
+                            name="signup-password"
+                            class="modal-input"
+                        />
+                    </div>
+
+                    <button class="button modal-button">SIGN UP</button>
                 </form>
             </div>
         </div>
@@ -65,34 +81,45 @@
         <div class="modal" id="log-in-modal">
             <div class="modal-content">
                 <span class="close-x">&times;</span>
-                <p>this is a modal for loggin in and it works so so well</p>
+                <h3 class="modal-title">LOG IN</h3>
                 <form id="login-form">
-                    <label for="login-email">Log In Email:</label><br />
-                    <input
-                        type="email"
-                        id="login-email"
-                        name="login-email"
-                    /><br />
-                    <label for="login-password">Log In Password:</label><br />
-                    <input
-                        type="text"
-                        id="login-password"
-                        name="login-password"
-                    /><br />
-                    <button class="button">Log In</button>
+                    <div class="modal-label-input">
+                        <label for="login-email" class="modal-label">Email:</label>
+                        <br />
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="login-email"
+                            class="modal-label"
+                        />
+                    </div>
+
+                    <div class="modal-label-input">
+                        <label for="login-password" class="modal-label"
+                            >Password:</label
+                        ><br />
+                        <input
+                            type="text"
+                            id="login-password"
+                            name="login-password"
+                            class="modal-label"
+                        />
+                    </div>
+                    <button class="button modal-button">LOG IN</button>
                 </form>
             </div>
         </div>
         <div class="modal" id="user-info-modal">
             <div class="modal-content">
                 <span class="close-x">&times;</span>
-                <p>this is a modal for user info and it works so so well</p>
+                <h3 class="modal-title">USER INFO</h3>
+                <p>This is where your account data would be stored :)</p>
             </div>
         </div>
 
         <!-- MAIN BODY CONTENT -->
         <div class="logged-out-cont">
-            logged out text for logged out container
+            <h3 id="logged-out-phrase"></h3>
         </div>
         <div class="notes-cont"></div>
     </body>

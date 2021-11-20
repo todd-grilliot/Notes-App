@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@100;700&display=swap');
+*{
+    font-family: 'Roboto Slab';
+    font-size: 18px;
+    font-weight: 500;
+    color: #004369;
+}
+
 body{
     margin: 0;
 }
@@ -5,54 +13,108 @@ body{
     display: flex;
     justify-content: right;
     align-items: center;
-    padding: 50px 100px;
+    padding: 0px 100px;
+}
+.nav h2{
+    font-family: 'roboto';
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: #004369;
 }
 .nav-button{
     padding: 25px;
+}
+.nav-button h2{
     cursor: pointer; 
+    padding: 10px;
 }
-
-.modal{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    overflow: auto;
-}
-.modal-content{
-    background-color: #fefefe;
-    margin: 0 auto;
-    padding: 35px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-.close-x{
-    font-size: 40px;
-    font-weight: 1000;
-    cursor: pointer;
-    float: right;
-    color: grey;
-}
-.close-x:hover, .close-x:focus{
-    color: darkslategray;
-}
+/* MODALS RIGHT HERE THESE ARE THE MODALS */
+        .modal{
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-title{
+            font-family: 'Roboto';
+            letter-spacing: 5px;
+            font-weight: 900;
+            font-size: 80px;
+            color: #D1E3ED;
+            margin: 0 0 25px 0;
+        }
+        .modal-content{
+            background-color: #fefefe;
+            margin: 0 auto;
+            padding: 40px 60px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+        }
+        .modal-label{
+            font-family: 'Roboto Slab';
+            font-size: 18px;
+            font-weight: 500;
+            color: #004369;
+        }
+        .modal-input{
+            font-family: "Roboto Slab";
+        }
+        .modal-label-input{
+            margin: 15px 0px;
+        }
+        .modal-button{
+            background-color: #09AEB3;
+            color: white;
+            font-family: "Roboto";
+            font-weight: 300px;
+            font-size: 20px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .modal-button:hover{
+            background-color: #01949A;
+            cursor: pointer;
+        }
+        .close-x{
+            font-family: 'Roboto';
+            font-size: 80px;
+            font-weight: 900;
+            padding: 0px 20px;
+            cursor: pointer;
+            float: right;
+            color: #D1E3ED;
+        }
+        .close-x:hover, .close-x:focus{
+            color: #A6C7D9;
+        }
+/* MODALS ^^^ ARE DONE */
 
 .notes-cont {
-
     display: none;
     height: 2000px;
-    background-color: lightblue;
+    background-color: #004369;
     padding: 25px;
 }
-.logged-out-cont {
+.logged-out-cont{
     height: 2000px;
-    background-color: lightgray;
-    margin-top: 20px;
-    padding: 20px;
+    background-color: #E5DDC8;
+    padding: 100px 100px;
+    text-align: right;
+
+}
+#logged-out-phrase {
+    margin: 0;
+    color: #DB1F48;
+    font-size: 90px;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
 }
 .row {
     display: flex;
@@ -60,11 +122,11 @@ body{
 .new-note-float{
     height: 272px;
     width: 200px;
-    /*background-color: white;*/
     margin: 20px;
     border: 20px;
-    /*border-radius: 20px;*/
-    border-color: lightslategray;
+    /* border-color: #397090; */
+    border-color: #1C72A4;
+     /* border-color: rgba(255,255,255,.2);  */
     border-style: dashed;
     display: flex;
 }
@@ -76,24 +138,24 @@ body{
 .new-note-float i{
     font-size: 120px;
     margin: auto;
-    color: lightslategray;;
+    color: #1C72A4;
 }
 .note {
     height: 300px;
     width: 240px;
     background-color: orange;
     margin: 20px;
-    /*padding: 20px;*/
 }
 .inner-note {
-    background-color: lightcoral;
+    background-color: #E5DDC8;
     padding: 20px;
     height: calc(100% - 60px);
 }
 .note-textarea {
     width: auto;
     background-color: transparent;
-    color: white;
+    color: #004369;
+    font-family: 'Roboto Slab';
     font-size: 16px;
     overflow: hidden;
     resize: none;
@@ -103,9 +165,11 @@ body{
 
 .top-bar {
     display: flex;
-    background-color: darkslateblue;
+    /* background-color: #4986A9; */
+    background-color: #1C72A4;
     width: 95%;
-    padding-right: 5%;
+    padding: 0 5% 0 0;
+    /* padding: 10px 5% 10px 0; */
     justify-content: end;
 }
 .top-bar button {
@@ -120,4 +184,6 @@ body{
 .trash-button{
     cursor: pointer;
 }
-
+#user-info{
+    display: none;
+}

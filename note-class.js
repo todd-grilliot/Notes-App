@@ -27,7 +27,7 @@ export class Note {
         let localEdit = `<button><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>`;
         let localTrash = `<button><i class="fa fa-trash-o trash-button" id="trash-button-${id}" aria-hidden="true"></i></button>`;
         let localTopBar = `<div class='top-bar'>${localEdit}${localTrash}</div>`;
-        let localNoteText = `<textarea class='note-textarea' cols='20' rows='12' maxlength='240' placeholder='Write Something!'>${text}</textarea>`;
+        let localNoteText = `<textarea class='note-textarea' cols='18' rows='12' maxlength='260' placeholder='Write Something!'>${text}</textarea>`;
         let localNote = `<div class='note'>${localTopBar}<div class='inner-note'>${localNoteText}</div></div>`;
 
         $(".active-row").append(localNote);

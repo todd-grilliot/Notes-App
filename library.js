@@ -2,6 +2,7 @@
 
 import { Note } from "./note-class.js";
 import { saveToDb } from "./db.js";
+import { phrases } from "./array-library.js";
 
 
 export let noteArray = [];
@@ -19,6 +20,7 @@ export function debugKey() {
 // INITIALIZE FUNCTION
 export function onPageLoad(){
     console.log('on page load firing');
+    //newPhrase(); this is firing from loggedOut() now
 }
 
 // NEW NOTE FUNCTION
@@ -105,7 +107,9 @@ export function loggedOut(){
     console.log('deleting all notes');
     $(".row .note").not(".active-row").remove();
     $(".notes-cont").hide();
+    $("#user-info").hide();
     $(".logged-out-cont").show();
+    newPhrase();
     //delete all notes, hide the div
     // show new div with stuff... maybe instructions, a picture of me? whatever.
 }
@@ -117,6 +121,7 @@ export function loggedIn(user){
     $(".row .note").not(".active-row").remove();
     $(".notes-cont").show();
     $(".logged-out-cont").hide();
+    $("#user-info").show();
 }
 
 //MODALS
@@ -145,4 +150,11 @@ export function exitModal(modal){
     $(".modal").css("opacity", "0");
     $(".modal-content").css("margin", "0 auto");
 
+}
+
+export function newPhrase(){
+    let phr = phrases[Math.floor(Math.random()*phrases.length)]
+    $("#logged-out-phrase").text(phr);
+    $("#logged-out-phrase").css({marginTop: "300px", opacity: "0"})
+    $("#logged-out-phrase").animate({marginTop: "0px", opacity: "1"}, 1500, "swing");
 }

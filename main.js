@@ -28,21 +28,21 @@ $("#load-button").click(function (e) {
 });
 
 //MODAL EVENT LISTENERS
-$("#sign-up").click(function (e) {
+$("#sign-up h2").click(function (e) {
     launchModal("#sign-up-modal");
 })
 
-$("#log-in").click(function (e) {
+$("#log-in h2").click(function (e) {
     console.log('log in!');
     launchModal("#log-in-modal");
 })
 
-$("#log-out").click(function (e) {
+$("#log-out h2").click(function (e) {
     console.log('log out!');
     logout();
 })
 
-$("#user-info").click(function (e) {
+$("#user-info h2").click(function (e) {
     console.log('user info!');
     launchModal("#user-info-modal");
 })
