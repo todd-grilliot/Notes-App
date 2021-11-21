@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -23,28 +24,42 @@
         />
     </head>
     <body>
+
         <div class="nav">
+            <img src="/asssets/sun-logo.png" class="logo">
             <button id="save-button" class="button">Save Button</button>
 
             <!-- <button id="logout-button" class="button">Logout</button> -->
 
-            <div class="nav-button" id="sign-up">
+            <div class="nav-button desktop-nav-button" id="sign-up">
                 <h2>SIGN UP</h2>
             </div>
 
-            <div class="nav-button" id="log-in">
+            <div class="nav-button desktop-nav-button" id="log-in">
                 <h2>LOG IN</h2>
             </div>
 
-            <div class="nav-button" id="log-out">
+            <div class="nav-button desktop-nav-button" id="log-out">
                 <h2>LOG OUT</h2>
             </div>
 
             <div class="nav-button" id="user-info">
-                <h2>USER INFO</h2>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+
+            <div class="nav-button mobile-nav-button" id="mobile-menu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
         </div>
 
+        <div class="mobile-drop-down">
+            <hr class="mobile-horizontal-rule">
+            <h2 class="mobile-drop-down-title" id="mobile-sign-up">SIGN UP</h2>
+            <hr class="mobile-horizontal-rule">
+            <h2 class="mobile-drop-down-title" id="mobile-log-in">LOG IN</h2>
+        </div>
+
+        <!-- #region Modals -->
         <!-- MODALS -->
         <div class="modal" id="sign-up-modal">
             <div class="modal-content">
@@ -52,7 +67,9 @@
                 <h3 class="modal-title">SIGN UP</h3>
                 <form id="signup-form">
                     <div class="modal-label-input">
-                        <label for="signup-email" class="modal-label">Email:</label>
+                        <label for="signup-email" class="modal-label"
+                            >Email:</label
+                        >
                         <br />
                         <input
                             type="email"
@@ -84,13 +101,15 @@
                 <h3 class="modal-title">LOG IN</h3>
                 <form id="login-form">
                     <div class="modal-label-input">
-                        <label for="login-email" class="modal-label">Email:</label>
+                        <label for="login-email" class="modal-label"
+                            >Email:</label
+                        >
                         <br />
                         <input
                             type="email"
                             id="login-email"
                             name="login-email"
-                            class="modal-label"
+                            class="modal-input"
                         />
                     </div>
 
@@ -102,7 +121,7 @@
                             type="text"
                             id="login-password"
                             name="login-password"
-                            class="modal-label"
+                            class="modal-input"
                         />
                     </div>
                     <button class="button modal-button">LOG IN</button>
@@ -116,6 +135,8 @@
                 <p>This is where your account data would be stored :)</p>
             </div>
         </div>
+
+        <!-- #endregion -->
 
         <!-- MAIN BODY CONTENT -->
         <div class="logged-out-cont">

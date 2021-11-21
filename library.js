@@ -4,7 +4,6 @@ import { Note } from "./note-class.js";
 import { saveToDb } from "./db.js";
 import { phrases } from "./array-library.js";
 
-
 export let noteArray = [];
 export let rowLimitX = Math.floor((window.innerWidth - 50) / 280);
 
@@ -18,8 +17,8 @@ export function debugKey() {
 }
 
 // INITIALIZE FUNCTION
-export function onPageLoad(){
-    console.log('on page load firing');
+export function onPageLoad() {
+    console.log("on page load firing");
     //newPhrase(); this is firing from loggedOut() now
 }
 
@@ -51,19 +50,14 @@ export function saveAll() {
 //BUILD NOTES FUNTION
 //coming in from loadFromDb() in db.js
 export function buildNewNotes(data) {
-    //console.log("build button wee woo");
-    //console.log(data);
-    //console.log(data.notesObj[0].text);
-    //console.log(Object.keys(data.notesObj).length);
-
     for (let i = 0; i < Object.keys(data.notesObj).length; i++) {
         newNote(data.notesObj[i].text);
     }
 }
 
 // we'll call you *refresh* NOTES FUNCTION
-export function refreshNotes(array){
-    console.log('wiping all notes');
+export function refreshNotes(array) {
+    console.log("wiping all notes");
     $(".row .note").not(".active-row").remove();
 
     //build them again based off of whats in the array...
@@ -71,40 +65,36 @@ export function refreshNotes(array){
     rebuildNotes(array);
 }
 
-function rebuildNotes(array){
+function rebuildNotes(array) {
     //rebuild from the array without loading everything new - this way we don't call New Note 100 times and blow up the array
 
     for (let i = 0; i < array.length; i++) {
         let him = array[i];
         him.build(him.text, him.id);
-        
+
         $(`#trash-button-${i}`).click(function (e) {
             let handlerIndex = e.target.id.slice(-1);
             noteArray[handlerIndex].delete();
         });
     }
-
 }
 
-export function addNewNoteFloat(){
-    
+export function addNewNoteFloat() {
     const localFloatIcon = `<button><i class="fa fa-plus-square"></i></button>`;
     const localFloatDiv = `<div class='new-note-float'>${localFloatIcon}</div>`;
 
     $(".active-row").append(localFloatDiv);
-    $(".new-note-float i, .new-note-float").css('cursor', 'pointer');
-    $(".new-note-float").click(function(e){
-        console.log('new note float!!!');
+    $(".new-note-float i, .new-note-float").css("cursor", "pointer");
+    $(".new-note-float").click(function (e) {
+        console.log("new note float!!!");
         newNote();
-    })
-    
-
+    });
 }
 
 //LOGGED IN AND OUT SCREENS
-export function loggedOut(){
-    console.log('user is signed out');
-    console.log('deleting all notes');
+export function loggedOut() {
+    console.log("user is signed out");
+    console.log("deleting all notes");
     $(".row .note").not(".active-row").remove();
     $(".notes-cont").hide();
     $("#user-info").hide();
@@ -114,8 +104,8 @@ export function loggedOut(){
     // show new div with stuff... maybe instructions, a picture of me? whatever.
 }
 
-export function loggedIn(user){
-    console.log('user is logged in');
+export function loggedIn(user) {
+    console.log("user is logged in");
     console.log(user.uid);
     console.log(user.email);
     $(".row .note").not(".active-row").remove();
@@ -125,36 +115,49 @@ export function loggedIn(user){
 }
 
 //MODALS
-export function launchModal(modal){
+/* #region  modals */
+export function launchModal(modal) {
     console.log(modal + "!");
     fadeInModal(modal);
 
     $(window).click(function (e) {
         let classList = Object.values(e.target.classList);
-        if(classList.includes("modal"))exitModal();
+        if (classList.includes("modal")) exitModal();
     });
     $(".modal-content span").click(function (e) {
         exitModal();
-    })
-
+    });
 }
 
-function fadeInModal(modal){
+function fadeInModal(modal) {
     $(modal).show();
     $(".modal").css("opacity", "0");
-    $(".modal").animate({opacity: '1'},"0.5s");
-    $(".modal-content").animate({margin: '15% auto'},"0.5s");
+    $(".modal").animate({ opacity: "1" }, "0.5s");
+    $(".modal-content").animate({ margin: "15% auto" }, "0.5s");
 }
-export function exitModal(modal){
+export function exitModal(modal) {
     $(".modal").hide();
     $(".modal").css("opacity", "0");
     $(".modal-content").css("margin", "0 auto");
-
 }
 
-export function newPhrase(){
-    let phr = phrases[Math.floor(Math.random()*phrases.length)]
+export function newPhrase() {
+    let phr = phrases[Math.floor(Math.random() * phrases.length)];
     $("#logged-out-phrase").text(phr);
-    $("#logged-out-phrase").css({marginTop: "300px", opacity: "0"})
-    $("#logged-out-phrase").animate({marginTop: "0px", opacity: "1"}, 1500, "swing");
+    $("#logged-out-phrase").css({ marginTop: "300px", opacity: "0" });
+    $("#logged-out-phrase").animate(
+        { marginTop: "0px", opacity: "1" },
+        1500,
+        "swing"
+    );
+}
+
+/* #endregion */
+// END MODALS
+
+export function mobileDropDown() {
+    if($(".mobile-drop-down").is(":visible")) 
+        $(".mobile-drop-down").slideUp();
+    else 
+        $(".mobile-drop-down").slideDown()
 }
