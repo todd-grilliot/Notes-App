@@ -6,6 +6,8 @@ import { phrases } from "./array-library.js";
 
 export let noteArray = [];
 export let rowLimitX = Math.floor((window.innerWidth - 50) / 280);
+let myTimeout = null;
+let timerRunning = null;
 
 export function debugKey() {
     $(document).keydown(function (e) {
@@ -35,9 +37,22 @@ export function newRow() {
     addNewNoteFloat();
 }
 
+// AUTOSAVE START TIMER FUNCTION
+export function saveTimer() {
+    if(timerRunning == true){
+        clearTimeout(myTimeout);
+        myTimeout = setTimeout(saveAll, 2000);
+        timerRunning = true;
+    }else{
+        myTimeout = setTimeout(saveAll, 2000);
+        timerRunning = true;
+    }
+}
+
 // SAVE FUNCTION
 export function saveAll() {
     console.log("saving...");
+    $("#save-icon").show();
 
     //saving each item in the array as the thing that it is
     for (let i = 0; i < noteArray.length; i++) {
@@ -88,6 +103,7 @@ export function addNewNoteFloat() {
     $(".new-note-float").click(function (e) {
         console.log("new note float!!!");
         newNote();
+        saveTimer();
     });
 }
 

@@ -31,7 +31,12 @@ export function saveToDb(array){
     //save the datas with a success/error handler that can't really tell if it works. lol
     setDoc(doc(db, "users", userUID), {userDocData}).then(function() {
         console.log(`Save Successfull!`);
-    },function(error){console.log(`error!!! ${error}`)})
+        $("#save-icon").fadeOut();
+    },function(error){
+        console.log(`error!!! ${error}`); 
+        alert("Failed to save your data :(");
+        $("#save-icon").fadeOut();
+    })
 };
 
 //LOADING FROM THE DATABASE

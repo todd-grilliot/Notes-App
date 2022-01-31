@@ -1,6 +1,6 @@
 //start page
 
-import { newRow, debugKey, newNote, saveAll, onPageLoad, launchModal, mobileDropDown } from "./library.js";
+import { newRow, debugKey, newNote, saveAll, onPageLoad, launchModal, mobileDropDown, saveTimer } from "./library.js";
 import { loadFromDb } from "./db.js";
 import { logout } from "./auth.js";
 
@@ -12,10 +12,10 @@ onPageLoad();
 //EVENT LISTENERS
     debugKey();
 
-    $("#new-note-button").click(function (e) {
-        e.preventDefault();
-        newNote();
-    });
+    // $("#new-note-button").click(function (e) {
+    //     e.preventDefault();
+    //     newNote();
+    // });
 
     $("#save-button").click(function (e) {
         e.preventDefault();
@@ -29,7 +29,12 @@ onPageLoad();
 
     $("#mobile-menu").click(function (e) {
         mobileDropDown();
-    })
+    });
+
+    $(".note-textarea").change(function (e){
+        e.preventDefault();
+        console.log('keyup!');
+    });
 
     //MODAL EVENT LISTENERS
         $("#sign-up h2, #mobile-sign-up").click(function (e) {
@@ -41,7 +46,7 @@ onPageLoad();
             launchModal("#log-in-modal");
         })
 
-        $("#log-out h2").click(function (e) {
+        $("#log-out h2, #mobile-log-out").click(function (e) {
             console.log('log out!');
             logout();
         })

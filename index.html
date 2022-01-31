@@ -27,8 +27,9 @@
 
         <div class="nav">
             <img src="/asssets/sun-logo.png" class="logo">
-            <button id="save-button" class="button">Save Button</button>
+            <i class="fa fa-floppy-o nav-button" id="save-icon" aria-hidden="true"></i>
 
+            <!-- <button id="save-button" class="button">Save Button</button> -->
             <!-- <button id="logout-button" class="button">Logout</button> -->
 
             <div class="nav-button desktop-nav-button" id="sign-up">
@@ -57,6 +58,8 @@
             <h2 class="mobile-drop-down-title" id="mobile-sign-up">SIGN UP</h2>
             <hr class="mobile-horizontal-rule">
             <h2 class="mobile-drop-down-title" id="mobile-log-in">LOG IN</h2>
+            <hr class="mobile-horizontal-rule">
+            <h2 class="mobile-drop-down-title" id="mobile-log-out">LOG OUT</h2>
         </div>
 
         <!-- #region Modals -->
@@ -83,7 +86,7 @@
                             >Password:</label
                         ><br />
                         <input
-                            type="text"
+                            type="password"
                             id="signup-password"
                             name="signup-password"
                             class="modal-input"
@@ -118,7 +121,7 @@
                             >Password:</label
                         ><br />
                         <input
-                            type="text"
+                            type="password"
                             id="login-password"
                             name="login-password"
                             class="modal-input"

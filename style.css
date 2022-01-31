@@ -35,6 +35,9 @@ body {
 .nav-button {
     padding: 30px;
 }
+#save-icon {
+    display: none;
+}
 .nav-button h2, .nav-button i {
     cursor: pointer;
     padding: 10px;
@@ -91,7 +94,7 @@ body {
     font-family: "Roboto";
     letter-spacing: 5px;
     font-weight: 900;
-    font-size: 6vw;
+    font-size: 8vw;
     color: #d1e3ed;
     margin: 0 0 25px 0;
 }
@@ -115,6 +118,7 @@ body {
     /* border: 2px #004369; */
     border: 1px solid #004369;
     border-radius: 3px;
+    width: 70%;
 }
 .modal-input:focus {
     border: 2px solid #004369;
@@ -132,6 +136,7 @@ body {
     border: none;
     border-radius: 5px;
     margin-top: 10px;
+    letter-spacing: 2px;
 }
 .modal-button:hover {
     background-color: #01949a;
@@ -139,7 +144,7 @@ body {
 }
 .close-x {
     font-family: "Roboto";
-    font-size: 6vw;
+    font-size: 8vw;
     font-weight: 900;
     padding: 0px 20px;
     cursor: pointer;
@@ -150,16 +155,41 @@ body {
 .close-x:focus {
     color: #a6c7d9;
 }
+
+@media screen and (max-width: 800px) {
+    .modal-title {
+        font-size: 11vw;
+    }
+    .modal-content{
+        padding: 11vw;
+        width: 70%;
+    }
+    .close-x{
+        font-size: 10vw;
+    }
+    .modal-input {
+        width: 90%;
+        padding: 1vw 2vw;
+        font-size: 15px;
+    }
+    .modal-button {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
 /* #endregion modals */
 
 .notes-cont {
     display: none;
-    height: 2000px;
+    height: 100%;
+    min-height: 85vh;
     background-color: #004369;
     padding: 25px;
+
 }
+
 .logged-out-cont {
-    height: 2000px;
+    height: 90vh;
     background-color: #e5ddc8;
     padding: 7vw 100px;
     text-align: right;
@@ -185,6 +215,11 @@ body {
 .row {
     display: flex;
 }
+@media screen and (max-width: 600px) {
+    .row{    
+        justify-content: center;
+    }
+}
 .new-note-float {
     height: 272px;
     width: 200px;
@@ -206,6 +241,7 @@ body {
     margin: auto;
     color: #1c72a4;
 }
+
 /* #region  note */
 .note {
     height: 300px;

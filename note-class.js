@@ -1,6 +1,6 @@
 //start page
 
-import { noteArray, rowLimitX, newRow, refreshNotes, addNewNoteFloat } from "./library.js";
+import { noteArray, rowLimitX, newRow, refreshNotes, addNewNoteFloat, saveTimer } from "./library.js";
 
 export class Note {
     constructor(text) {
@@ -17,6 +17,11 @@ export class Note {
             let handlerIndex = e.target.id.slice(-1);
             noteArray[handlerIndex].delete();
         });
+
+        //trying to copy the trash event listener to do the same thing for when the textbox changes...
+        $(`#note-textarea-${noteArray[noteArray.length - 1].id}`).on('input', function (e) {
+            saveTimer();
+        });
     }
 
     build(text, id) {
@@ -27,7 +32,7 @@ export class Note {
         let localEdit = `<button><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>`;
         let localTrash = `<button><i class="fa fa-trash-o trash-button" id="trash-button-${id}" aria-hidden="true"></i></button>`;
         let localTopBar = `<div class='top-bar'>${localEdit}${localTrash}</div>`;
-        let localNoteText = `<textarea class='note-textarea' cols='18' rows='12' maxlength='260' placeholder='Write Something!'>${text}</textarea>`;
+        let localNoteText = `<textarea class='note-textarea' id="note-textarea-${id}" cols='18' rows='12' maxlength='260' placeholder='Write Something!'>${text}</textarea>`;
         let localNote = `<div class='note'>${localTopBar}<div class='inner-note'>${localNoteText}</div></div>`;
 
         $(".active-row").append(localNote);
@@ -35,7 +40,6 @@ export class Note {
         if ($(".note").length % rowLimitX === 0) newRow();
         $(".new-note-float").remove();
         addNewNoteFloat();
-
     }
 
     delete() {
@@ -52,6 +56,9 @@ export class Note {
         }
         //wipe all //then load all again, wait will we have to save it? there will be no ctrl z in this app.
         refreshNotes(noteArray);
+
+        // start / restart the autosave timer
+        saveTimer();
 
         
 
