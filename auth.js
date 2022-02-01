@@ -2,7 +2,7 @@
 
 import { loggedOut, loggedIn, exitModal } from "./library.js";
 import { loadFromDb } from "./db.js";
-import {app, db, auth} from '/firebase.js'
+import {app, db, auth} from './firebase.js'
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
 
 export let userUID;
