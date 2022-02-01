@@ -1,6 +1,6 @@
 //start page
 
-import {app, db, auth} from '/firebase.js'
+import {app, db, auth} from './firebase-auth.js'
 import { getFirestore, doc, setDoc, updateDoc, getDoc, Timestamp, } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore.js";
 import { userUID, userEmail } from './auth.js';
 import { noteArray, saveAll, buildNewNotes } from './library.js';
