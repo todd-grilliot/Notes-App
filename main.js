@@ -55,3 +55,10 @@ onPageLoad();
             console.log('user info!');
             launchModal("#user-info-modal");
         })
+
+
+        //BUGS THAT I'M FINDING
+        //
+        // for some reason sometimes when you type on a note it doesn't auto save... could be only on new notes? not sure...
+        // there needs to be some explaination for logging in and creating users
+        // perameters for creating users and passwords and stuff... if they type in something invalid, will it tell them?
