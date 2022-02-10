@@ -1,30 +1,19 @@
 //start page
 
-import { newRow, debugKey, newNote, saveAll, onPageLoad, launchModal, mobileDropDown, saveTimer } from "./library.js";
-import { loadFromDb } from "./db.js";
+import { newRow, debugKey, saveAll, launchModal, mobileDropDown, saveTimer, noteArray } from "./library.js";
+import { } from "./db.js";
 import { logout } from "./auth.js";
 
 console.log(" manin .js tbg is starting the app...");
 
 newRow();
-onPageLoad();
 
 //EVENT LISTENERS
     debugKey();
 
-    // $("#new-note-button").click(function (e) {
-    //     e.preventDefault();
-    //     newNote();
-    // });
-
     $("#save-button").click(function (e) {
         e.preventDefault();
         saveAll();
-    });
-
-    $("#load-button").click(function (e) {
-        e.preventDefault();
-        loadFromDb();
     });
 
     $("#mobile-menu").click(function (e) {
@@ -61,5 +50,3 @@ onPageLoad();
         //
         // for some reason sometimes when you type on a note it doesn't auto save... could be only on new notes? not sure...
         // ^^^ unsure,,, but it did happen. make sure that it does something if it can't save, or if it takes too long to save...
-        // there needs to be some explaination for logging in and creating users
-        // perameters for creating users and passwords and stuff... if they type in something invalid, will it tell them?

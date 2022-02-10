@@ -13,6 +13,8 @@ export let loadedData;
 //make sure that he can't save before the notes are loaded in, because he will overwrite everthing with empty notes if he does.
 //only call load once?? on page load? and it will never have to be called again?
 export function saveToDb(array){
+
+    console.log(array);
     
     //turn array into notesObj
     const notesObj = {};
@@ -32,11 +34,14 @@ export function saveToDb(array){
     setDoc(doc(db, "users", userUID), {userDocData}).then(function() {
         console.log(`Save Successfull!`);
         $("#save-icon").fadeOut();
-    },function(error){
-        console.log(`error!!! ${error}`); 
-        alert("Failed to save your data :(");
-        $("#save-icon").fadeOut();
+    // },function(error){
+    //     console.log(`error!!! ${error}`); 
+    //     alert("Failed to save your data :(");
+    //     $("#save-icon").fadeOut();
     })
+    .catch((error) => {
+        console.log(error.message);
+      });
 };
 
 //LOADING FROM THE DATABASE
@@ -44,8 +49,11 @@ export function saveToDb(array){
 export function loadFromDb(){
     console.log('loading....');
     getDoc(doc(db, "users", userUID)).then(e => {
-        loadedData = e.data().userDocData;
-        buildNewNotes(loadedData);
+        if(e._document){
+            loadedData = e.data().userDocData;
+            buildNewNotes(loadedData);
+        }else{console.log("There is no data to retrieve")}
+
     });
 }
 

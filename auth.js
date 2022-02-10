@@ -1,19 +1,19 @@
 //start page
 
-import { loggedOut, loggedIn, exitModal } from "./library.js";
+import { loggedOut, loggedIn, exitModal, showErrorWarning, noteArray, clearArray } from "./library.js";
 import { loadFromDb } from "./db.js";
 import {app, db, auth} from './firebase-auth.js';
-
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
-//import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.3.0/firebase.js";
-//import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export let userUID;
 export let userEmail;
 
 //auth listener
 onAuthStateChanged(auth, (user) => {
-    console.log('AUTH STATTE SCHANGE!');
+    console.log('Auth State Change');
+    console.log('clearring previous array');
+    clearArray(noteArray);
+    //console.log(noteArray);
     if(user){
         loggedIn(user);
         userEmail = user.email;
@@ -39,7 +39,11 @@ signupForm.submit(function(e) {
         console.log(cred);
         signupForm.trigger("reset");
         exitModal();
-    });
+    })
+    .catch((error) => {
+        console.log(error.message);
+        showErrorWarning(error.code);
+      });
 });
 
 //login
@@ -55,7 +59,11 @@ loginForm.submit(function(e) {
         console.log(cred);
         loginForm.trigger("reset");
         exitModal();
-    });
+    })
+    .catch((error) => {
+        console.log(error.message);
+        showErrorWarning(error.code);
+      });
 });
 
 //logout

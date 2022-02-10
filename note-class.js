@@ -8,8 +8,12 @@ export class Note {
         this.id = noteArray.length;
         //this.color?...
 
-        this.build(this.text, this.id);
+        if(!this.text){
+            console.log('constructor error - no text');
+        }
         noteArray.push(this);
+        this.build(this.text, this.id);
+
 
 
         //the trash button event listener - calls the this.delete function in a very round about way because jquery gets confused about "this"

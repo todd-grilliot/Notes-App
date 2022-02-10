@@ -155,6 +155,9 @@ body {
 .close-x:focus {
     color: #a6c7d9;
 }
+.modal-warning{
+    color: #db1f48;
+}
 
 @media screen and (max-width: 800px) {
     .modal-title {
@@ -185,7 +188,6 @@ body {
     min-height: 85vh;
     background-color: #004369;
     padding: 25px;
-
 }
 
 .logged-out-cont {
@@ -194,21 +196,34 @@ body {
     padding: 7vw 100px;
     text-align: right;
 }
-#logged-out-phrase {
-    margin: 0;
+#logged-out-heading {
+    margin: 2vw 0;
     color: #db1f48;
-    /* font-size: 90px; */
-    font-size: 7vw;
+    font-size: 6vw;
     font-family: "Roboto Slab";
     font-weight: 700;
+    letter-spacing: 5px;
+}
+#logged-out-subheading {
+    color: #004369;
+    font-size: 4vw;
+    font-family: "Roboto Slab";
+    font-weight: 300;
+    letter-spacing: 5px;
 }
 
 @media screen and (max-width: 800px) {
     .logged-out-cont{
         padding: 7vw 10vw;
     }
-    #logged-out-phrase {
+    #logged-out-heading {
         font-size: 14vw;
+        margin: 6vw 0;
+        letter-spacing: 2px;
+    }
+    #logged-out-subheading {
+        font-size: 8vw;
+        letter-spacing: 3px;
     }
 }
 

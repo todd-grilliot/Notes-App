@@ -11,11 +11,12 @@
         <link rel="icon" type="image/x-icon" href="./asssets/favicon.ico">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+        
+        <script type="module" src="main.js" defer></script>
         <script type="module" src="firebase-auth.js"></script>
         <script type="module" src="library.js" defer></script>
         <script type="module" src="note-class.js" defer></script>
-        <script type="module" src="main.js" defer></script>
+
         <script type="module" src="auth.js" defer></script>
         <script type="module" src="db.js" defer></script>
         <script type="module" src="array-library.js" defer></script>
@@ -93,6 +94,7 @@
                             name="signup-password"
                             class="modal-input"
                         />
+                        <h3 class="modal-warning">password must be 8 characters long</h3>
                     </div>
 
                     <button class="button modal-button">SIGN UP</button>
@@ -128,6 +130,7 @@
                             name="login-password"
                             class="modal-input"
                         />
+                        <h3 class="modal-warning">password must be 8 characters long</h3>
                     </div>
                     <button class="button modal-button">LOG IN</button>
                 </form>
@@ -145,7 +148,8 @@
 
         <!-- MAIN BODY CONTENT -->
         <div class="logged-out-cont">
-            <h3 id="logged-out-phrase"></h3>
+            <h3 id="logged-out-heading"></h3>
+            <h2 id="logged-out-subheading"></h2>
         </div>
         <div class="notes-cont"></div>
     </body>
